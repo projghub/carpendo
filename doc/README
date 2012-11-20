@@ -1,0 +1,174 @@
+What can we do?
+- Health Care
+- Gov Information
+- Real Estate
+- Services
+- Retail
+- MLM
+- Leads
+- Builders
+- Exercise
+
+carpendo
+
+Cusomters set the price.
+
+Gives me my top matches
+If I pin an image and put a price, it brings me all the
+The Engine would match the "price" and bring up related items
+You can pin the e-commerce product.
+Our site is compiled of multiple suppliers.
+We track the information and sell it.
+I don't care if they purchase from our site.  I want to know Kyle is 28 and likes candles.
+
+Kyle is searching for furniture.  All I want to do is pin it.  I'm willing to pay $1,200.  Tell me what site they came from. Kyle has to go through google images because google doesn't show them.  Takes forever and he still can't find it.
+
+Nike says, why aren't we selling more on this site?  Oh, it's because Reebok has these deals.
+We don't care about prices on other people's website.
+
+There is a social aspect that is extremely critical.
+
+Customers can select their preferred brands.
+Can we show your stuff on our site?
+
+Frantz would select Nordstrom, Express, H&M
+
+I don't have to go to express.
+
+People who viewed this also viewed this.  The difference is that it should be around the price that i've said.  Overstock shows "related products"
+
+People like to see something, and get it cheaper.
+
+Who got it for less?  The winner is whoever can find the lowest price for the items you want.
+
+We wouldn't have the ability to negotiate with the liquidators
+I don't need this exact brand.
+We need a bunch of suppliers that can provide
+
+We need a search engine
+
+Help people find deals
+
+Ability to share with friends
+
+"We do it way better than Google"
+
+What can we take from iOffer?
+
+There is a feed for the latest deals.
+
+
+
+ADS
+t.name:string
+t.description:string
+t.price:double
+
+API_KEYS
+t.user_id:integer, null: false
+t.access_token:string, null: false
+
+CATEGORIES
+t.parent_id:integer
+t.name:string, null: false
+t.timestamps
+
+COMPETITION
+t.winner_id:integer
+t.name:string, null: false
+t.start_at:datetime
+t.end_at:datetime
+
+DEALS
+t.customer_id:integer, null: false
+t.product_id:integer, null: false
+t.ad_id:integer
+
+INVOICES
+status
+t.due_at:datetime
+t.published_at:datetime
+t.timestamps
+
+INVOICE_ITEMS
+t.name:string
+t.description:string
+t.price:double
+t.quantity:integer
+
+INVOICE_PAYMENTS
+
+NOTES
+t.note_type:string
+
+OUTFIT
+t.name
+t.description
+
+PERMISSIONS
+t.namespace:string, null: false
+t.controller:string, null: false
+t.action:string, null: false
+
+PHOTOS
+t.product_id:integer, null: false
+t.url
+t.filename
+t.original_filename
+t.mime_type
+t.filesize
+
+PRODUCTS
+t.vendor_id:integer
+t.name:string
+t.suggested_price:double
+
+PERMISSIONS_USERS
+permssion_id:integer, null: false
+user_id:integer, null: false
+
+RATINGS (vendors, customers, products)
+t.rating_type:string
+
+USERS
+t.first_name:string
+t.last_name:string
+t.address:string
+t.city:string
+t.state:string
+t.region:string
+t.postal_code:string
+t.email:string
+t.phone:string
+t.password:string
+t.password_digest:string
+t.timestamps
+
+VENDORS
+t.name:string
+t.address:string
+t.city:string
+t.state:string
+t.region:string
+t.postal_code:string
+t.timestamps
+
+
+DATABASE
+tagging?
+rating?
+
+How is this different than Froogle?
+
+Scratch everything you know.  Here is what Frantz does.
+
+Discovery mode
+
+Frantz receives clothing magazines.
+Frantz tears pages/pictures that he likes. The reason he does it is that he likes the outfits and wants to replicate it.
+Regularly he goes to express, h&m, 6pm.  Brandi goes to Nordstrom.  She will find deals/outfits that she will pin on pinterst.
+
+Shopping mode
+"Frantz, do you remember that bow tie?  Let's go look for it."  They will look for bow ties.  They will go to several websites including those manufacturers.  Once they find a cheap price, they purchase.
+
+Friends then ask, where do you buy your clothes?
