@@ -91,60 +91,72 @@ t.published_at:datetime
 t.timestamps
 
 INVOICE_ITEMS
-t.name:string
-t.description:string
-t.price:double
-t.quantity:integer
+t.string :nam
+t.string :description
+t.double :price
+t.integer :quantity
 
 INVOICE_PAYMENTS
 
+
 NOTES
-t.note_type:string
+t.string :content
+t.integer :noteable_id
+t.string :noteable_type
 
 OUTFIT
-t.name
-t.description
+t.integer :user_id
+t.string :name
+t.string :description
 
 PERMISSIONS
-t.namespace:string, null: false
-t.controller:string, null: false
-t.action:string, null: false
+t.string :namespace, null: false
+t.string :controller, null: false
+t.string :action, null: false
 
 PHOTOS
-t.product_id:integer, null: false
-t.url
-t.filename
-t.original_filename
-t.mime_type
-t.filesize
+t.integer :product_id, null: false
+t.string :url
+t.string :filename
+t.string :original_filename
+t.string :mime_type
+t.integer :filesize
 
 PRODUCTS
-t.vendor_id:integer
-t.name:string
-t.suggested_price:double
+t.references :rateable, polymorphic: true
+t.integer :vendor_id
+t.string :name, null: false
+t.double :suggested_price
 
 PERMISSIONS_USERS
-permssion_id:integer, null: false
-user_id:integer, null: false
+t.permssion_id:integer, null: false
+t.user_id:integer, null: false
 
 RATINGS (vendors, customers, products)
-t.rating_type:string
+t.integer :rating, null: false
+t.integer :user_id, null: false
+t.string :rateable_id
+t.string :rateable_type
 
 USERS
-t.first_name:string
-t.last_name:string
-t.address:string
-t.city:string
-t.state:string
-t.region:string
-t.postal_code:string
-t.email:string
-t.phone:string
-t.password:string
-t.password_digest:string
+t.references :noteable, polymorphic: true
+t.references :rateable, polymorphic: true
+t.string :first_name
+t.string :last_name
+t.string :address
+t.string :city
+t.string :state
+t.string :region
+t.string :postal_code
+t.string :email
+t.string :phone
+t.string :password
+t.string :password_digest
 t.timestamps
 
 VENDORS
+t.references :noteable, polymorphic: true
+t.references :rateable, polymorphic: true
 t.name:string
 t.address:string
 t.city:string
@@ -157,6 +169,23 @@ t.timestamps
 DATABASE
 tagging?
 rating?
+
+What sets us apart?
+What is the revenue model?
+Do we want to do E-Commerce?
+Can customers purchase directly from our site?
+Do we give away cash or the outfit?
+Do we only do clothing/accessories?
+
+As a customer I want to be able
+As a customer I want to be able to send out my link so that my friends can vote for my outfit.
+As a customer I want to be able to create outfits from anything I find on the internet.
+As a customer I want to be able to choose from products available in Carpendo inventory.
+As a customer I want to be able to add comments to other peoples outfits.
+
+As an admin I want to be able to add, edit, delete users
+As an admin I want to be able to add, edit, delete vendors
+
 
 How is this different than Froogle?
 
