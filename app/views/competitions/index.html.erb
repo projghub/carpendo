@@ -1,0 +1,16 @@
+<% provide(:title, 'Competition') %>
+<%- model_class = Competition -%>
+<div class="page-header">
+  <h1><%= yield(:title) %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @competition.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:winner_id) %>:</strong></dt>
+  <dd><%= @competition.winner_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_at) %>:</strong></dt>
+  <dd><%= @competition.start_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_at) %>:</strong></dt>
+  <dd><%= @competition.end_at %></dd>
+</dl>
