@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  winner_id: 1
+  start_at: 2012-11-20 21:47:39
+  end_at: 2012-11-20 21:47:39
+
+two:
+  name: MyString
+  winner_id: 1
+  start_at: 2012-11-20 21:47:39
+  end_at: 2012-11-20 21:47:39
