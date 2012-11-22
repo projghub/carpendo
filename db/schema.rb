@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121052149) do
+ActiveRecord::Schema.define(:version => 20121122000002) do
 
   create_table "competitions", :force => true do |t|
     t.string   "name",       :null => false
@@ -29,5 +29,34 @@ ActiveRecord::Schema.define(:version => 20121121052149) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+
+  create_table "permissions", :force => true do |t|
+    t.string   "namespace"
+    t.string   "controller"
+    t.string   "action"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "permissions_users", :force => true do |t|
+    t.integer "permission_id"
+    t.integer "user_id"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",           :default => "", :null => false
+    t.string   "password_digest", :default => "", :null => false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "phone"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

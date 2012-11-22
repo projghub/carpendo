@@ -1,0 +1,27 @@
+<%= form_for @admin_permission, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render "layouts/error_messages", :target => @admin_permission %>
+  <div class="control-group">
+    <%= f.label :namespace, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:namespace, options_for_select(permission_namespaces, f.object.namespace)) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :controller, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:controller, options_for_select(permission_controllers, f.object.controller), {include_blank: true}) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :action, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select(:action, options_for_select(permission_actions, f.object.action), {include_blank: true}) %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_permissions_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<%- model_class = @admin_permission.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:namespace) %>:</strong><br>
+  <%= @admin_permission.namespace %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:controller) %>:</strong><br>
+  <%= @admin_permission.controller %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:action) %>:</strong><br>
+  <%= @admin_permission.action %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              admin_permissions_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_admin_permission_path(@admin_permission), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              admin_permission_path(@admin_permission),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>
