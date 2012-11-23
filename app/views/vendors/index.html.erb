@@ -1,0 +1,22 @@
+<%- model_class = Vendor -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:phone) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= link_to vendor.name, admin_vendor_path(vendor) %></td>
+        <td><%= vendor.email %></td>
+        <td><%= vendor.phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121122000002) do
+ActiveRecord::Schema.define(:version => 20121123225322) do
 
   create_table "competitions", :force => true do |t|
     t.string   "name",       :null => false
@@ -58,5 +58,23 @@ ActiveRecord::Schema.define(:version => 20121122000002) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+
+  create_table "vendors", :force => true do |t|
+    t.integer  "noteable_id"
+    t.string   "noteable_type"
+    t.integer  "rateable_id"
+    t.string   "rateable_type"
+    t.string   "name",          :null => false
+    t.string   "address"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "region"
+    t.string   "postal_code"
+    t.string   "country"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
 end

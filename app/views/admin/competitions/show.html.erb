@@ -1,0 +1,27 @@
+<%- model_class = Admin::Competition -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @admin_competition.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:winner_id) %>:</strong></dt>
+  <dd><%= @admin_competition.winner_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_at) %>:</strong></dt>
+  <dd><%= @admin_competition.start_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_at) %>:</strong></dt>
+  <dd><%= @admin_competition.end_at %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              admin_competitions_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_admin_competition_path(@admin_competition), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              admin_competition_path(@admin_competition),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

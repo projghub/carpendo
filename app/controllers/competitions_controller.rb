@@ -1,5 +1,9 @@
 class CompetitionsController < ApplicationController
   def index
-    @competition = Competition.new(name: 'New competition')
+    @competitions = Competition.paginate(page: params[:page], per_page: 20)
+  end
+
+  def show
+    @competition = Competition.find(params[:id])
   end
 end
