@@ -17,7 +17,6 @@
         <td><%= link_to vendor.name, admin_vendor_path(vendor) %></td>
         <td><%= vendor.email %></td>
         <td><%= vendor.phone %></td>
-        <td><%=l vendor.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_admin_vendor_path(vendor), :class => 'btn btn-mini' %>

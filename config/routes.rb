@@ -4,6 +4,7 @@ Yabe::Application.routes.draw do
     match '/login' => 'sessions#new', as: :login
     match '/logout' => 'sessions#destroy', as: :logout
     match '/dashboard' => 'admin#dashboard', as: :dashboard
+    resources :categories
     resources :competitions
     resources :permissions
     resources :sessions

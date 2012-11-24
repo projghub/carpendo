@@ -13,7 +13,7 @@
   <tbody>
     <% @vendors.each do |vendor| %>
       <tr>
-        <td><%= link_to vendor.name, admin_vendor_path(vendor) %></td>
+        <td><%= link_to vendor.name, vendor_path(vendor) %></td>
         <td><%= vendor.email %></td>
         <td><%= vendor.phone %></td>
       </tr>
